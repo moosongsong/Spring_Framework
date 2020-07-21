@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util ="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="map" class="java.util.HashMap">
+        <constructor-arg>
+            <map key-type="java.lang.String" value-type="java.lang.Integer">
+                <entry>
+                    <key><value>kor</value></key>
+                    <value>100</value>
+                </entry>
+                <entry>
+                    <key><value>eng</value></key>
+                    <value>90</value>
+                </entry>
+                <entry>
+                    <key><value>math</value></key>
+                    <value>80</value>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <bean id="person" class="org.example.Person">
+        <constructor-arg name="name" value="kim">
+
+        </constructor-arg>
+        <constructor-arg name="hashMap" ref="map">
+
+        </constructor-arg>
+    </bean>
+</beans>

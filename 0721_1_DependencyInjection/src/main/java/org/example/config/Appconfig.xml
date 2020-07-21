@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="member1" class="org.example.vo.Member">
+        <!--    setter injection-->
+        <property name="name" value="KimSeokJin"/>
+        <property name="age" value="29"/>
+    </bean>
+    <bean id="member2" class="org.example.vo.Member">
+        <constructor-arg index="0" value="MinYoongi"/>
+        <constructor-arg name="age" value="28"/>
+    </bean>
+</beans>

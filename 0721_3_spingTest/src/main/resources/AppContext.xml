@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="person" class="org.example.Person">
+        <property name="name" value="JunghoSeok"/>
+        <property name="age" value="27"/>
+    </bean>
+
+    <bean id="list1" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+<!--                오브젝트 타입으로 들어감-->
+                <value>KimSeokJin</value>
+                <value>MinYoongi</value>
+                <value>KimNamJun</value>
+                <ref bean="person"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <util:list id="list2" value-type="java.lang.String">
+        <value>KimSeokJin</value>
+        <value>MinYoongi</value>
+        <value>KimNamJun</value>
+    </util:list>
+
+    <bean id="map" class="java.util.HashMap">
+        <constructor-arg>
+            <map key-type="java.lang.String" value-type="java.lang.Integer">
+                <entry>
+                    <key><value>one</value></key>
+                    <value>10</value>
+                </entry>
+                <entry>
+                    <key><value>two</value></key>
+                    <value>20</value>
+                </entry>
+            </map>
+        </constructor-arg>
+    </bean>
+
+</beans>
